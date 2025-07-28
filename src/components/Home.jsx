@@ -1,7 +1,6 @@
 import React from "react";
 import heroImage from "../assets/main3.jpg";
 import confluenceLogo from "../assets/sticker.png";
-import CountdownSection from "../pages/CountdownPage";
 import EventHighlights from "./EventHighlights";
 import { Link } from "react-router-dom";
 
@@ -9,24 +8,26 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-screen text-white overflow-x-hidden">
+      <section className="relative w-full text-white overflow-x-hidden h-[80vh] sm:h-screen">
         {/* Background image */}
         <div
-          className="absolute inset-0 bg-fixed bg-center bg-cover z-0"
-          style={{ backgroundImage: `url(${heroImage})` }}
+          className="absolute inset-0 z-0 bg-center bg-cover bg-no-repeat sm:bg-fixed"
+          style={{
+            backgroundImage: `url(${heroImage})`,
+          }}
         />
 
-        {/* Grey overlay */}
-        <div className="absolute inset-0 bg-black/50 z-10" />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/70 sm:bg-black/50 z-10" />
 
         {/* Content */}
-        <div className="relative z-20 flex flex-col items-center justify-center h-full text-center px-4 md:px-6 space-y-6">
+        <div className="relative z-20 flex flex-col items-center justify-center text-center px-4 md:px-6 space-y-6 h-full">
           {/* Logo and Version */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
             <img
               src={confluenceLogo}
               alt="Confluence Logo"
-              className="w-60 sm:w-72 md:w-[28rem] lg:w-[32rem] max-w-full"
+              className="w-48 sm:w-72 md:w-[28rem] lg:w-[32rem] max-w-full"
             />
             <span
               className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-none"
@@ -36,17 +37,17 @@ export default function Home() {
             </span>
           </div>
 
-          {/* Event Title */}
+          {/* Title */}
           <p className="text-base sm:text-xl md:text-3xl text-gray-100 tracking-wide">
             The Largest Industry–Academia Meet
           </p>
 
-          {/* Event Date */}
+          {/* Date */}
           <p className="text-sm sm:text-lg md:text-2xl text-gray-200 mt-2">
             21–27 September · Kochi
           </p>
 
-          {/* CTA Button */}
+          {/* Button */}
           <Link
             to="/countdown"
             className="inline-block px-5 py-2 bg-white text-black text-sm sm:text-base font-semibold rounded hover:bg-gray-200 transition"
@@ -59,7 +60,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Event Highlights Section */}
+      {/* Event Highlights */}
       <section>
         <EventHighlights />
       </section>

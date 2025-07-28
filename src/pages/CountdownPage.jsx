@@ -27,33 +27,36 @@ export default function CountdownSection() {
   }, []);
 
   return (
-    <section className="relative h-screen w-full text-white flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <img
-        src={backgroundImg}
-        alt="Countdown Background"
-        className="absolute inset-0 w-full h-full object-cover brightness-50"
+    <section className="relative w-full text-white flex items-center justify-center overflow-hidden h-[80vh] sm:h-screen">
+      {/* Background as a div instead of img */}
+      <div
+        className="absolute inset-0 z-0 bg-center bg-cover bg-no-repeat sm:bg-fixed"
+        style={{
+          backgroundImage: `url(${backgroundImg})`,
+        }}
       />
-      <div className="absolute inset-0 bg-black/40" />
+
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/60 sm:bg-black/40 z-10" />
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4">
-        <h1 className="text-7xl uppercase tracking-widest text-gray-300 mb-4">
+      <div className="relative z-20 text-center px-4 sm:px-8">
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl uppercase tracking-wide sm:tracking-widest text-gray-300 font-bold mb-6 sm:mb-4">
           Launching Soon
         </h1>
 
-        <div className="flex justify-center space-x-6 text-center mb-12">
+        <div className="flex flex-wrap justify-center gap-x-4 gap-y-4 sm:space-x-6 mb-10 sm:mb-12">
           {[
             { label: "DAYS", value: timeLeft.days },
             { label: "HOURS", value: timeLeft.hours },
             { label: "MINUTES", value: timeLeft.minutes },
             { label: "SECONDS", value: timeLeft.seconds },
           ].map((unit, idx) => (
-            <div key={idx}>
-              <div className="text-5xl md:text-6xl font-extrabold tracking-tight">
+            <div key={idx} className="flex flex-col items-center min-w-[60px]">
+              <div className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight">
                 {String(unit.value).padStart(2, "0")}
               </div>
-              <div className="text-xs md:text-sm tracking-widest mt-2 text-gray-300">
+              <div className="text-xs sm:text-sm tracking-widest mt-2 text-gray-300">
                 {unit.label}
               </div>
             </div>
@@ -62,7 +65,7 @@ export default function CountdownSection() {
 
         <Link
           to="/"
-          className="inline-block px-6 py-2 bg-white text-black text-sm md:text-base font-semibold rounded hover:bg-gray-200 transition"
+          className="inline-block px-5 sm:px-6 py-2 bg-white text-black text-sm sm:text-base font-semibold rounded hover:bg-gray-200 transition"
         >
           Back to Home
         </Link>
