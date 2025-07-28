@@ -2,9 +2,9 @@ import React from "react";
 import summit from "../assets/summit.jpeg";
 import marathon from "../assets/marathon.jpeg";
 import fireside from "../assets/fireside.jpeg";
-import panel from "../assets/panel.jpeg";
-import counselling from "../assets/counselling2.jpeg";
-import orientation from "../assets/orientation.jpeg";
+import panel from "../assets/event1.jpeg";
+import counselling from "../assets/event2.jpeg";
+import orientation from "../assets/event3.jpeg";
 import workshops from "../assets/workshops.jpeg";
 import exhibitions from "../assets/exhibitions.jpeg";
 

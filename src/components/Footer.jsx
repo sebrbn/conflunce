@@ -5,7 +5,7 @@ import miterdham from "../assets/mitherdham.png";
 import rcss from "../assets/rcss.png";
 import rset from "../assets/rset2.png";
 import rbs from "../assets/rbs.png";
-import rcmas from "../assets/rcmas.png";
+import rcmas from "../assets/rcmas.jpg";
 import rvcas from "../assets/rvcs2.png";
 import shthevara from "../assets/shthevara.jpeg";   
 
