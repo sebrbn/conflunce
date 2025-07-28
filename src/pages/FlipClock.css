@@ -1,0 +1,32 @@
+.flip-unit {
+  text-align: center;
+}
+
+.flip-card {
+  position: relative;
+  width: 80px;
+  height: 100px;
+  perspective: 1000px;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.top,
+.bottom {
+  background-color: #111;
+  color: #ffbf00;
+  border-radius: 8px;
+  padding: 10px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+  transition: transform 0.5s;
+}
+
+.label {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #ccc;
+}
